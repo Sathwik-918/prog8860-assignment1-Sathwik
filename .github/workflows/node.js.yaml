@@ -1,7 +1,5 @@
 name: assignment-1
 on:
-  push:
-    branches: [ "feature-b"]
   pull_request:
     branches: [ "main" ]
 jobs:
