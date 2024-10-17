@@ -7,6 +7,6 @@ COPY assigment-1-base/ .
 # Install the dependencies
 RUN npm install
 # Build the application
-RUN npm run build
+RUN npm run ci
 # Run the tests
 CMD ["npm", "test"]
