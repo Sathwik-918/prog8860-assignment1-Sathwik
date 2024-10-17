@@ -1,0 +1,24 @@
+
+  push:
+    branches: [ "feature","main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    # Step 2: Build the Docker image
+    - name: Build Docker image
+      run: docker build -t my-app:latest ./assignment1-base
+    # Step 3: Run the Docker container
+    - name: Run Docker container
+      run: docker run -d --name my-app-container my-app:latest
+    # Step 4: Show running Docker container
+    - name: Show running Docker container
+      run: docker ps
+    # Step 5: Stop the Docker container
+    - name: Stop Docker container
+      run: docker stop my-app-container
